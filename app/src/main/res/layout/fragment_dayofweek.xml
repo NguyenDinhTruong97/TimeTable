@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_current"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"-->
+        <!--android:textSize="30sp"-->
+        <!--android:textStyle="bold|italic"-->
+        <!--android:textColor="#000000"-->
+        <!--android:gravity="center"/>-->
+    <LinearLayout
+        android:id="@+id/fragment_dow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginVertical="3dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="7"></android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.3"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Add"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginHorizontal="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

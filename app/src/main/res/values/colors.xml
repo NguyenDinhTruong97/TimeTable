@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorText">#000000</color>
+    <color name="colorWhite">#FFFF</color>
+    <color name="colorNghi">#ff0000</color>
+    <color name="colorList">#68f1ca</color>
+    <color name="colorBorder">#11700f</color>
+    <color name="Monday">#9400D3</color>
+    <color name="Tuesday">#4B0082</color>
+    <color name="Wednesday">#0000FF</color>
+    <color name="Thursday">#00FF00</color>
+    <color name="Friday">#FFFF00</color>
+    <color name="Saturday">#FF7F00</color>
+    <color name="Sunday">#FF0000</color>
+</resources>

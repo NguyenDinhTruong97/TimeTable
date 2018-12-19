@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/homepage"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/monday"
+        android:title="Thứ 2"
+        android:icon="@drawable/monday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/tuesday"
+        android:title="Thứ 3"
+        android:icon="@drawable/tuesday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/wednesday"
+        android:title="Thứ 4"
+        android:icon="@drawable/wednesday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/thusday"
+        android:title="Thứ 5"
+        android:icon="@drawable/thursday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/friday"
+        android:title="Thứ 6"
+        android:icon="@drawable/friday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/saturday"
+        android:title="Thứ 7"
+        android:icon="@drawable/saturday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/sunday"
+        android:title="Chủ Nhật"
+        android:icon="@drawable/sunday"
+        android:visible="true"
+        app:showAsAction="always"></item>
+
+
+</menu>

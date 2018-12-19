@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TimeTable</string>
+    <string name="open_drawer">TimeTable</string>
+    <string name="close_drawer">TimeTable</string>
+</resources>

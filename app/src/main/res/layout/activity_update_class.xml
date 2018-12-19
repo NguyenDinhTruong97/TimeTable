@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.AppCompat.Light" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="1.Tên lớp học:"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edt_update_classname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="2.Thời gian bắt đầu:"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp">
+            <TextView
+                android:id="@+id/tv_starttime_hour2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=":"/>
+            <TextView
+                android:id="@+id/tv_starttime_min2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></View>
+            <Button
+                android:id="@+id/btn_update_starttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SỬA"
+                android:background="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="3.Thời gian kết thúc:"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp">
+            <TextView
+                android:id="@+id/tv_endtime_hour2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=":"/>
+            <TextView
+                android:id="@+id/tv_endtime_min2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></View>
+            <Button
+                android:id="@+id/btn_update_endtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SỬA"
+                android:background="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="4.Tên giảng viên:"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edt_update_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="5.Ngày thi/ Deadline:"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp">
+            <TextView
+                android:id="@+id/tv_deadline2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/btn_update_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SỬA"
+                android:background="@color/colorPrimary"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp">
+            <Button
+                android:id="@+id/btn_update_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="OK"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="40dp"/>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="match_parent"></View>
+            <Button
+                android:id="@+id/btn_update_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="HUỶ"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
+                android:layout_marginRight="40dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
