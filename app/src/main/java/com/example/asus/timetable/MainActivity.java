@@ -2,6 +2,7 @@ package com.example.asus.timetable;
 
 
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -32,8 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Intent intent = getIntent();
     int state = 0;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,85 +57,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
 
-
-
     }
 
-//    public void currentState() {
-//        switch (state){
-//            case 2:{
-//                toolbar.setTitle("Thứ 2");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 3:{
-//                toolbar.setTitle("Thứ 3");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 4:{
-//                toolbar.setTitle("Thứ 4");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 5:{
-//                toolbar.setTitle("Thứ 5");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 6:{
-//                toolbar.setTitle("Thứ 6");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 7:{
-//                toolbar.setTitle("Thứ 7");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//            case 8:{
-//                toolbar.setTitle("Chủ nhật");
-//                tvCurrent.setText("CÁC LỚP HỌC");
-//                FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
-//                fragmentDayOfWeek.setDayOfWeek(2);
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.container, fragmentDayOfWeek);
-//                transaction.commit();
-//                break;
-//            }
-//
-//        }
-//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -145,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.monday : {
                 toolbar.setTitle("Thứ 2");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Monday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -157,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.tuesday: {
                 toolbar.setTitle("Thứ 3");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Tuesday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -169,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.wednesday: {
                 toolbar.setTitle("Thứ 4");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Wednesday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -181,6 +106,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.thusday: {
                 toolbar.setTitle("Thứ 5");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Thursday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(5);
@@ -192,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.friday: {
                 toolbar.setTitle("Thứ 6");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Friday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(6);
@@ -203,6 +132,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.saturday: {
                 toolbar.setTitle("Thứ 7");
                 tvCurrent.setText("CÁC LỚP HỌC");
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Saturday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(7);
@@ -214,7 +145,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.sunday: {
                 toolbar.setTitle("Chủ Nhật");
                 tvCurrent.setText("CÁC LỚP HỌC");
-                tvCurrent.setTextColor(getResources().getColor(R.color.colorWhite));
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Sunday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(8);
@@ -224,6 +156,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.home: {
+                toolbar.setTitle("Thời khoá biểu");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorText));
                 currentDay();
             }
 
@@ -236,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (day) {
             case Calendar.SUNDAY: {
                 tvCurrent.setText("CHỦ NHÂT");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Sunday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -247,6 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case Calendar.MONDAY:{
                 tvCurrent.setText("THỨ HAI");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Monday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -258,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case Calendar.TUESDAY: {
                 tvCurrent.setText("THỨ BA");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Tuesday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -269,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case Calendar.WEDNESDAY: {
                 tvCurrent.setText("THỨ TƯ");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Wednesday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
@@ -280,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case Calendar.THURSDAY: {
                 tvCurrent.setText("THỨ NĂM");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Thursday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(5);
@@ -300,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case Calendar.SATURDAY: {
                 tvCurrent.setText("THỨ BẢY");
+                tvCurrent.setTextColor(getResources().getColor(R.color.colorText));
                 toolbar.setBackgroundColor(getResources().getColor( R.color.Saturday));
                 FragmentDayOfWeek fragmentDayOfWeek = new FragmentDayOfWeek();
                 fragmentDayOfWeek.setDayOfWeek(7);

@@ -63,14 +63,14 @@ public class AddClassActivity extends AppCompatActivity implements TimePickerDia
         final String dayofWeek = intent.getStringExtra("day");
         switch (dayofWeek){
             case "Thứ 2": state = 2; break;
-            case "Thứ 3": state = 3; break;
-            case "Thứ 4": state = 4; break;
-            case "Thứ 5": state = 5; break;
-            case "Thứ 6": state = 6; break;
-            case "Thứ 7": state = 7; break;
-            case "Chủ Nhật": state = 8; break;
+        case "Thứ 3": state = 3; break;
+        case "Thứ 4": state = 4; break;
+        case "Thứ 5": state = 5; break;
+        case "Thứ 6": state = 6; break;
+        case "Thứ 7": state = 7; break;
+        case "Chủ Nhật": state = 8; break;
 
-        }
+    }
 
         toolbar.setTitle(toolbarname);
 

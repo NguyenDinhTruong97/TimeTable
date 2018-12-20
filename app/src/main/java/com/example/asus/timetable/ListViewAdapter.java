@@ -69,12 +69,40 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
         holder.btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialog();
-                ClassDatabase classDatabase = new ClassDatabase(context);
-                classDatabase.open();
-                classDatabase.deleteClass(studyClass.getId());
-                listdata.remove(studyClass);
-                notifyDataSetChanged();
+
+                final AlertDialog.Builder builder;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
+                } else {
+                    builder = new AlertDialog.Builder(context);
+                }
+                builder.setTitle("Xoá môn học");
+                builder.setMessage("Bạn có chắc là muốn xoá môn học này chứ?");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                ClassDatabase classDatabase = new ClassDatabase(context);
+                                classDatabase.open();
+                                classDatabase.deleteClass(studyClass.getId());
+                                listdata.remove(studyClass);
+                                notifyDataSetChanged();
+                                dialog.dismiss();
+                            }
+                        });
+                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                builder.setIcon(android.R.drawable.ic_dialog_alert);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+//                ClassDatabase classDatabase = new ClassDatabase(context);
+//                classDatabase.open();
+//                classDatabase.deleteClass(studyClass.getId());
+//                listdata.remove(studyClass);
+//                notifyDataSetChanged();
 
             }
         });
@@ -84,8 +112,6 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
     public int getItemCount() {
         return listdata.size();
     }
-
-
         class ViewHolder extends RecyclerView.ViewHolder{
             LinearLayout linearLayout;
             TextView tvClassname, tvStarttime, tvEndtime;
@@ -99,30 +125,6 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
             linearLayout = itemView.findViewById(R.id.listitem);
 
         }
-
-
-    }
-    public void openDialog(){
-        AlertDialog.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
-        } else {
-            builder = new AlertDialog.Builder(context);
-        }
-        builder.setTitle("Xoá môn học")
-                .setMessage("Bạn có chắc là muốn xoá môn học này chứ?")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
-                    }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
     }
 
 }

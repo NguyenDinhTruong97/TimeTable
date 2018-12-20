@@ -85,7 +85,6 @@ public class ClassDatabase {
         return arrayList;
     }
 
-
     public void deleteClass(int ClassID){
         database.delete(ClassSQLiteOpenHelper.TABLE_NAME,"id = " + ClassID, null);
 
