@@ -47,20 +47,6 @@ public class ClassDatabase {
 
     }
 
-    public ArrayList<StudyClass>getAllClass(){
-        ArrayList<StudyClass> arrayList = new ArrayList<>();
-        Cursor cursor = database.query(ClassSQLiteOpenHelper.TABLE_NAME,null,null, null,null,null, null);
-        cursor.moveToFirst();
-        while(!cursor.isAfterLast()){
-            StudyClass studyClass = new StudyClass(cursor);
-            arrayList.add(studyClass);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return arrayList;
-    }
-
-
     public ArrayList<StudyClass>getStudyClass(int date){
         String dayofWeek = "";
         switch (date){

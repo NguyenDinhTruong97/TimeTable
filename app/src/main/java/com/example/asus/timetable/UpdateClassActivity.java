@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,7 +24,6 @@ import com.example.asus.timetable.DateAndTime.TimePickerFragment;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class UpdateClassActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener,DatePickerDialog.OnDateSetListener{
@@ -35,8 +33,7 @@ public class UpdateClassActivity extends AppCompatActivity implements TimePicker
     Button btnStarttime,btnEndtime,btnOk,btnCancel,btnDeadline;
     TextView tvStarttime_hour,tvStarttime_min,tvEndtime_hour,tvEndtime_min,tvdeadline;
     Context context = UpdateClassActivity.this;
-    ArrayList<StudyClass> arrayList = new ArrayList<>();
-    int temp,state;
+    int temp;
 
 
     @Override
@@ -57,18 +54,6 @@ public class UpdateClassActivity extends AppCompatActivity implements TimePicker
         deadline = bundle.getString("deadline");
         nameClass = bundle.getString("class name");
 
-        switch (dayOfWeek){
-            case "Thứ 2": state = 2; break;
-            case "Thứ 3": state = 3; break;
-            case "Thứ 4": state = 4; break;
-            case "Thứ 5": state = 5; break;
-            case "Thứ 6": state = 6; break;
-            case "Thứ 7": state = 7; break;
-            case "Chủ Nhật": state = 8; break;
-
-        }
-
-
         className = findViewById(R.id.edt_update_classname);
         toolbar = findViewById(R.id.toolbar);
         teacherName = findViewById(R.id.edt_update_teacher);
@@ -83,13 +68,13 @@ public class UpdateClassActivity extends AppCompatActivity implements TimePicker
         tvEndtime_min = findViewById(R.id.tv_endtime_min2);
         tvdeadline = findViewById(R.id.tv_deadline2);
 
-
+        DecimalFormat df = new DecimalFormat("00");
         className.setText(nameClass);
         teacherName.setText(teacher);
-        tvStarttime_hour.setText(""+startHour);
-        tvStarttime_min.setText(""+startMin);
-        tvEndtime_hour.setText(""+endHour);
-        tvEndtime_min.setText(""+endMin);
+        tvStarttime_hour.setText(""+df.format(startHour));
+        tvStarttime_min.setText(""+df.format(startMin));
+        tvEndtime_hour.setText(""+df.format(endHour));
+        tvEndtime_min.setText(""+df.format(endMin));
         tvdeadline.setText(deadline);
         toolbar.setTitle(nameClass);
 
@@ -141,10 +126,8 @@ public class UpdateClassActivity extends AppCompatActivity implements TimePicker
 
                 classDatabase.updateClass(studyClass);
                 Intent intent = new Intent(UpdateClassActivity.this,MainActivity.class);
-                intent.putExtra("state",state);
                 startActivity(intent);
 
-                Log.d("ahihi", "onClick: " + dayOfWeek );
                 Toast.makeText(UpdateClassActivity.this, "Cập nhật thành công!!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -153,7 +136,6 @@ public class UpdateClassActivity extends AppCompatActivity implements TimePicker
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(UpdateClassActivity.this,MainActivity.class);
-                intent1.putExtra("state",state);
                 startActivity(intent1);
             }
         });

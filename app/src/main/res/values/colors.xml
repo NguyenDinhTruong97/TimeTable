@@ -5,9 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorText">#000000</color>
     <color name="colorWhite">#FFFF</color>
-    <color name="colorNghi">#ff0000</color>
-    <color name="colorList">#68f1ca</color>
-    <color name="colorBorder">#11700f</color>
+    <color name="colorList">#2ecc71</color>
+    <color name="colorList2">#e74c3c</color>
+    <color name="colorBorder">#262626</color>
     <color name="Monday">#9400D3</color>
     <color name="Tuesday">#4B0082</color>
     <color name="Wednesday">#0000FF</color>

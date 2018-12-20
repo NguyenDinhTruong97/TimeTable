@@ -40,8 +40,9 @@
                 android:text="Add"
                 android:textSize="30sp"
                 android:textStyle="bold"
+                android:layout_marginVertical="10dp"
                 android:textColor="@color/colorWhite"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/corner"
                 android:layout_marginHorizontal="10dp"/>
 
         </LinearLayout>

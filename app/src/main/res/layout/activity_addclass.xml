@@ -22,40 +22,54 @@
             android:layout_marginLeft="10dp"
             android:text="1.Tên lớp học:"
             android:textColor="@color/colorText"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <EditText
             android:id="@+id/edt_classname"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:background="@drawable/corner2"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginHorizontal="10dp"
             android:text="2.Thời gian bắt đầu:"
             android:textColor="@color/colorText"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="10dp">
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/corner2">
             <TextView
                 android:id="@+id/tv_starttime_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="00"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text=":"/>
+                android:text=":"
+                android:gravity="center"
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tv_starttime_min"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="00"
+                android:gravity="center"
+                android:textSize="20sp"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -65,7 +79,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CHỌN"
-                android:background="@color/colorPrimary"/>
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/cornerbutton"/>
 
         </LinearLayout>
 
@@ -81,20 +97,29 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="10dp">
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/corner2">
         <TextView
             android:id="@+id/tv_endtime_hour"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            />
+            android:layout_marginLeft="5dp"
+            android:text="00"
+            android:gravity="center"
+            android:textSize="20sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text=":"/>
+            android:text=":"
+            android:gravity="center"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/tv_endtime_min"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:text="00"
+            android:gravity="center"
+            android:textSize="20sp"/>
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -104,7 +129,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CHỌN"
-            android:background="@color/colorPrimary"/>
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/cornerbutton"/>
 
     </LinearLayout>
 
@@ -120,8 +147,10 @@
             android:id="@+id/edt_teacher"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:inputType="textPersonName" />
+            android:layout_marginHorizontal="10dp"
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:background="@drawable/corner2"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -135,19 +164,23 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="10dp">
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/corner2">
         <TextView
             android:id="@+id/tv_deadline"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             />
         <Button
             android:id="@+id/btn_deadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CHỌN"
-            android:background="@color/colorPrimary"/>
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/cornerbutton"/>
 
     </LinearLayout>
         <LinearLayout
@@ -166,7 +199,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:textColor="@color/colorWhite"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/cornerbutton"
                 android:layout_marginLeft="40dp"/>
             <View
                 android:layout_width="30dp"
@@ -181,7 +214,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:textColor="@color/colorWhite"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/cancelbutton"
                 android:layout_marginRight="40dp"/>
 
         </LinearLayout>

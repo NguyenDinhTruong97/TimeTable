@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,9 +22,7 @@ import com.example.asus.timetable.DateAndTime.TimePickerFragment;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.text.Format;
 import java.util.Calendar;
-import java.util.Date;
 
 
 public class AddClassActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener,DatePickerDialog.OnDateSetListener {
@@ -35,7 +30,7 @@ public class AddClassActivity extends AppCompatActivity implements TimePickerDia
     TextView tvstarttimehour,tvstarttimemin,tvendtimehour,tvendtimemin,tvdeadline;
     Button btnstarttime, btnendtime, btndeadline,btnOK,btnCancel;
     EditText edtClassName,edtTecher;
-    int temp,state;
+    int temp;
     Toolbar toolbar;
 
 
@@ -61,16 +56,7 @@ public class AddClassActivity extends AppCompatActivity implements TimePickerDia
         final Intent intent = getIntent();
         final String toolbarname = intent.getStringExtra("Add");
         final String dayofWeek = intent.getStringExtra("day");
-        switch (dayofWeek){
-            case "Thứ 2": state = 2; break;
-        case "Thứ 3": state = 3; break;
-        case "Thứ 4": state = 4; break;
-        case "Thứ 5": state = 5; break;
-        case "Thứ 6": state = 6; break;
-        case "Thứ 7": state = 7; break;
-        case "Chủ Nhật": state = 8; break;
 
-    }
 
         toolbar.setTitle(toolbarname);
 
@@ -105,7 +91,6 @@ public class AddClassActivity extends AppCompatActivity implements TimePickerDia
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddClassActivity.this,MainActivity.class);
-                intent.putExtra("state",state);
                 startActivity(intent);
             }
         });
@@ -141,9 +126,9 @@ public class AddClassActivity extends AppCompatActivity implements TimePickerDia
                     classDatabase.open();
                     classDatabase.insertClass(studyClass);
                     Intent intent1 = new Intent(AddClassActivity.this, MainActivity.class);
-                    intent1.putExtra("state",state);
-                    Log.d("haha", "onClick: " + state);
                     startActivity(intent1);
+
+                    Toast.makeText(AddClassActivity.this, "Thêm môn học thành công!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

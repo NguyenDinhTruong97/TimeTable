@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.asus.timetable.Database.ClassDatabase;
 import com.example.asus.timetable.Database.StudyClass;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHolder> {
@@ -43,10 +44,11 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final StudyClass studyClass = listdata.get(position);
+        DecimalFormat df = new DecimalFormat("00");
 
         holder.tvClassname.setText(studyClass.getClass_name());
-        holder.tvStarttime.setText(studyClass.getStart_time_hour() +":"+studyClass.getEnd_time_min());
-        holder.tvEndtime.setText(studyClass.getEnd_time_hour() +":"+studyClass.getEnd_time_min());
+        holder.tvStarttime.setText(df.format(studyClass.getStart_time_hour()) +":"+df.format(studyClass.getEnd_time_min()));
+        holder.tvEndtime.setText(df.format(studyClass.getEnd_time_hour()) +":"+ df.format(studyClass.getEnd_time_min()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
